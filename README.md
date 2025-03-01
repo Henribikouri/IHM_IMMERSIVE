@@ -78,6 +78,21 @@ Nous accueillons toutes les contributions pour améliorer l'application ! 🎉
 
 ---
 
+## Equipe
+L'equipe est constituer de : 
+
+**BIKOURI HENRI** - henribikouri@gmail.com
+
+**DONGMO PRINCE**    -------
+
+**TOLOKOUM DAVID**   --------
+
+**MBOLANG HENRI**   ---------
+
+**NOUTCHAT AUDREY** ---------
+
+**TIWA PIOCHKO**    --------
+
 ## 📜 Licence
 Ce projet est sous licence MIT - Voir le fichier [LICENSE](LICENSE) pour plus d'informations.
 
