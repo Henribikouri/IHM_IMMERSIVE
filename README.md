@@ -26,9 +26,13 @@ Cette application innovante utilise des technologies avancées pour offrir une e
 
 ## 📌 Fonctionnalités
 ✅ Modélisation 3D d'une patiente avec **MakeHuman** et **Blender**
+
 ✅ Affichage interactif du modèle dans le navigateur via **Three.js**
+
 ✅ Simulation des symptômes en temps réel
+
 ✅ Interface utilisateur moderne et responsive
+
 ✅ Intégration de nouvelles données patientes dynamiquement
 
 ---
@@ -43,21 +47,22 @@ Cette application innovante utilise des technologies avancées pour offrir une e
 ## 📦 Installation et Exécution
 1️⃣ **Cloner le référentiel** :
 ```bash
-  git clone https://github.com/ton-user/ihm-immersive.git
-  cd ihm-immersive
+  git clone https://github.com/Henribikouri/IHM_IMMERSIVE.git
+  cd IHM_IMMERSIVE
 ```
-2️⃣ **Lancer un serveur local** (via Python ou Node.js) :
+2️⃣ **Lancer un serveur local** (via Node.js) :
 ```bash
-  # Avec Python
-  python -m http.server 8000
+#installation des dependances 
+npm install  // module de package node.js
+npm install three // pour ThreeJS
+npm install parcel // pour parcel
 
-  # Avec Node.js
-  npm install -g http-server
-  http-server .
+  # lancement du serveur
+  npm start   // serveur lancer 
 ```
 3️⃣ **Ouvrir le navigateur** :
 ```
-http://localhost:8000
+http://localhost:1234
 ```
 
 ---
@@ -66,9 +71,9 @@ http://localhost:8000
 Nous accueillons toutes les contributions pour améliorer l'application ! 🎉
 
 1. **Forker** le projet 🍴
-2. **Créer une branche** (`git checkout -b feature-ma-fonctionnalite`)
+2. **Créer une branche** (`git checkout -b nom_de_ta_branche ( ex: BIKOURI)`)
 3. **Committer vos changements** (`git commit -m "Ajout d'une fonctionnalité"`)
-4. **Pousser la branche** (`git push origin feature-ma-fonctionnalite`)
+4. **Pousser la branche** (`git push origin nom_de_ta_branche ( ex: BIKOURI)`)
 5. **Ouvrir une Pull Request** 🔥
 
 ---
@@ -79,7 +84,7 @@ Ce projet est sous licence MIT - Voir le fichier [LICENSE](LICENSE) pour plus d'
 ---
 
 ## 📞 Contact
-📧 Email : [tonemail@example.com](mailto:tonemail@example.com)  
+📧 Email : [henribikouri@gmail.com](henribikouri@gmail.com)  
 🌍 Site Web : [www.ihm-immersive.com](#)
 
 ---
