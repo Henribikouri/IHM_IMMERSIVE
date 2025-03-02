@@ -1,0 +1,302 @@
+/* style.css */
+
+body {
+    font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column; /* Pour que le footer reste en bas */
+    min-height: 100vh; /* Pour que le body occupe au moins toute la hauteur de la fenêtre */
+}
+
+header {
+    background-color: #f0f0f0; /* Couleur de fond de l'en-tête (peut être modifiée par le thème) */
+    padding: 10px 0;
+    border-bottom: 1px solid #ccc; /* Bordure inférieure */
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between; /* Espace entre le logo/nom et le menu */
+    align-items: center; /* Alignement vertical au centre */
+    padding: 0 20px; /* Marge intérieure à gauche et à droite */
+}
+
+.navbar-brand {
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+.navbar-menu {
+    list-style: none; /* Enlever les puces de la liste */
+    padding: 0;
+    margin: 0;
+    display: flex; /* Menu horizontal */
+}
+
+.nav-item {
+    margin: 0 15px; /* Espacement horizontal entre les éléments du menu */
+    position: relative; /* Important pour positionner le submenu */
+}
+
+.nav-link {
+    text-decoration: none; /* Enlever le soulignement des liens */
+    color: #333; /* Couleur de texte par défaut (peut être modifiée par le thème) */
+    padding: 8px 12px;
+    border-radius: 5px; /* Bords arrondis */
+    display: block; /* Pour que le padding et le border-radius fonctionnent correctement */
+}
+
+.nav-link:hover, .nav-link.active {
+    background-color: #ddd; /* Couleur de fond au survol et pour l'onglet actif */
+}
+
+/* Style du sous-menu */
+.submenu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    position: absolute; /* Positionné par rapport au .nav-item parent */
+    top: 100%; /* Juste en dessous du lien parent */
+    left: 0;
+    background-color: #fff; /* Fond blanc pour le submenu (peut être modifié par le thème) */
+    border: 1px solid #ccc; /* Bordure du submenu */
+    border-top: none; /* Enlever la bordure du haut */
+    border-radius: 0 0 5px 5px; /* Bords arrondis en bas */
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1); /* Ombre légère */
+    z-index: 10; /* S'assurer que le submenu est au-dessus du contenu */
+    display: none; /* Caché par défaut, sera affiché avec JavaScript */
+}
+
+.submenu li {
+    padding: 0;
+    margin: 0;
+}
+
+.submenu li a {
+    display: block;
+    padding: 10px 20px;
+    text-decoration: none;
+    color: #333; /* Couleur de texte du submenu (peut être modifiée par le thème) */
+    white-space: nowrap; /* Empêcher le texte de passer à la ligne dans le submenu */
+}
+
+.submenu li a:hover {
+    background-color: #eee; /* Couleur de fond au survol des liens du submenu */
+}
+
+/* Style du contenu principal */
+main#main-content {
+    flex-grow: 1; /* Permet au main de s'étendre pour remplir l'espace disponible */
+    padding: 20px;
+}
+
+#threejs-container {
+    width: 100%;
+    height: 600px; /* Ajustez la hauteur selon vos besoins */
+    background-color: #eee; /* Couleur de fond pour l'espace Three.js */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 20px; /* Marge en bas pour l'espacement */
+}
+
+#simulation-panel {
+    background-color: #f9f9f9;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+/* Style pour le conteneur principal du chat */
+#chat-container {
+    position: fixed; /* Position fixe pour rester en bas à droite de l'écran */
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000; /* S'assurer que le chat est au-dessus des autres éléments */
+}
+
+/* Style pour l'icône du chat */
+#chat-icon {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%; /* Icône ronde */
+    background-color: #007bff; /* Couleur bleue, vous pouvez changer */
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3); /* Ombre légère */
+    overflow: hidden; /* Pour que l'image ne dépasse pas du cercle */
+}
+
+#chat-icon img {
+    width: 100%; /* L'image remplit le conteneur */
+    height: auto;
+    display: block; /* Empêcher l'image d'ajouter de l'espace vertical supplémentaire */
+}
+
+
+/* Style pour la fenêtre de chat (initialement cachée avec display: none; en HTML) */
+#chat-window {
+    width: 300px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    overflow: hidden; /* Empêcher le contenu de dépasser */
+    display: none; /* Caché par défaut, le JS va changer cela */
+    flex-direction: column; /* Pour organiser l'header, le body et le footer verticalement */
+}
+
+/* Style pour l'en-tête de la fenêtre de chat */
+#chat-header {
+    background-color: #007bff;
+    color: white;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between; /* Titre à gauche, bouton fermer à droite */
+    align-items: center;
+}
+
+#chat-title {
+    font-weight: bold;
+}
+
+#chat-close-button {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.2em;
+    cursor: pointer;
+}
+
+/* Style pour le corps de la fenêtre de chat (messages) */
+#chat-body {
+    padding: 10px;
+    height: 200px; /* Hauteur fixe pour le défilement, ajustez si nécessaire */
+    overflow-y: auto; /* Ajout de la barre de défilement verticale si le contenu dépasse */
+}
+
+/* Style pour les messages (reçus et envoyés) - exemple pour les messages reçus */
+.message {
+    padding: 8px 12px;
+    border-radius: 10px;
+    margin-bottom: 8px;
+    clear: both; /* Empêcher les flottements */
+}
+
+.message-received {
+    background-color: #f0f0f0;
+    float: left; /* Messages reçus à gauche */
+}
+
+/* Style pour le pied de page de la fenêtre de chat (input + bouton) */
+#chat-footer {
+    padding: 10px;
+    border-top: 1px solid #eee;
+    display: flex;
+}
+
+#message-input {
+    flex-grow: 1; /* Prend tout l'espace disponible */
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-right: 5px;
+}
+
+#send-button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.navbar-brand {
+    font-size: 1.5em; /* Encore plus grand pour un impact maximal */
+    font-weight: bold;
+    text-transform: uppercase; /* Texte en majuscules pour un aspect moderne */
+    letter-spacing: 1px; /* Espacement des lettres plus marqué */
+    padding: 12px 20px;
+    border-radius: 30px; /* Bords plus arrondis, style "badge" moderne */
+    background-image: linear-gradient(to right, var(--couleur-primaire), color-mix(in lch, var(--couleur-primaire) 70%, black)); /* Dégradé de bleu */
+    color: rgb(157, 198, 216);
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3); /* Ombre plus marquée pour le contraste */
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2); /* Ombre portée légère pour le relief */
+    position: relative; /* Pour positionner l'élément pseudo ::after */
+    overflow: hidden; /* Pour cacher le débordement de l'effet vert */
+}
+
+.navbar-brand::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--couleur-secondaire); /* Fond vert (variable CSS - vert secondaire) */
+    opacity: 0.15; /* Légère transparence pour un effet subtil */
+    mix-blend-mode: overlay; /* Mode de fusion pour interagir avec le bleu en dessous */
+    border-radius: inherit; /* Hérite du border-radius du parent */
+    z-index: -1; /* Placé derrière le texte */
+}
+
+/* Style pour le menu "thème" (classe ajoutée "theme-menu" au LI) */
+.theme-menu .nav-link {
+    padding-left: 0.75rem; /* Ajustez l'espacement à gauche de l'icône si besoin */
+    padding-right: 0.75rem; /* Ajustez l'espacement à droite de l'icône si besoin */
+    display: flex; /* Pour centrer verticalement l'icône */
+    align-items: center; /* Centrer verticalement */
+}
+
+.theme-menu .nav-link i { /* Style pour l'icône elle-même */
+    font-size: 1.2rem; /* Ajustez la taille de l'icône si nécessaire */
+    vertical-align: middle; /* Aligner verticalement l'icône (peut être nécessaire selon la police et l'icône) */
+}
+
+/* Style pour le sous-menu "thème" */
+#theme-submenu {
+    /* Vous pouvez conserver ou modifier le style existant de votre sous-menu */
+    background-color: #f8f9fa; /* Couleur de fond claire pour le sous-menu - Adaptez à votre thème */
+    border: 1px solid #ddd;        /* Bordure légère - Adaptez à votre thème */
+    padding: 0.5rem 0;             /* Espacement interne - Adaptez à votre besoin */
+    min-width: 120px;              /* Largeur minimale du sous-menu */
+    /* ... autres styles existants pour #theme-submenu ... */
+}
+
+#theme-submenu li a {
+    display: block;             /* Pour que les liens prennent toute la largeur du LI */
+    padding: 0.5rem 1rem;       /* Espacement des liens dans le sous-menu */
+    color: #333;                /* Couleur du texte des liens - Adaptez à votre thème */
+    text-align: center;         /* Centrer le texte "ON" et "OFF" */
+    text-decoration: none;      /* Supprimer le soulignement par défaut des liens */
+}
+
+#theme-submenu li a:hover {
+    background-color: #e0e0e0; /* Couleur de fond au survol - Adaptez à votre thème */
+}
+
+/* Style pour l'image du thème dans la navbar (cible l'image directement à l'intérieur de #theme-link) */
+#theme-link img {
+    width: 32px;       /* Définir la largeur de l'image - ajustez cette valeur */
+    height: 32px;      /* Définir la hauteur de l'image - ajustez cette valeur (peut être auto si vous voulez conserver les proportions) */
+    border-radius: 50%; /* Rendre l'image arrondie (cercle parfait) */
+    object-fit: cover; /* Important pour que l'image remplisse le cercle sans déformation et soit bien centrée */
+    vertical-align: middle; /* Aligner verticalement l'image au milieu du texte/autres éléments de la navbar */
+    /* Optionnel : ajouter une bordure si vous souhaitez un contour visible autour de l'icône */
+    /* border: 1px solid #ccc; */
+    /* Optionnel : ajouter une marge pour espacer l'icône des autres éléments de la navbar */
+    /* margin-right: 0.5rem; */
+}
+
+/* Style du footer */
+footer {
+    background-color: #333; /* Couleur de fond du footer */
+    color: #fff; /* Couleur du texte du footer */
+    text-align: center; /* Centrer le texte */
+    padding: 10px 0;
+    font-size: 0.8em; /* Taille de police plus petite */
+}

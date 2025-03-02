@@ -1,0 +1,48 @@
+/* theme-sombre.css */
+
+body {
+    background-color: #333; /* Fond sombre pour le thème sombre */
+    color: #eee; /* Texte clair pour le thème sombre */
+}
+
+header {
+    background-color: #444;
+    border-bottom-color: #666;
+}
+
+.navbar-link {
+    color: #eee;
+}
+
+.navbar-link:hover, .navbar-link.active {
+    background-color: #555;
+}
+
+.submenu {
+    background-color: #444;
+    border-color: #666;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5); /* Ombre plus marquée pour le thème sombre */
+}
+
+.submenu li a {
+    color: #eee;
+}
+
+.submenu li a:hover {
+    background-color: #555;
+}
+
+#simulation-panel {
+    background-color: #555;
+    color: #eee;
+    border-color: #666;
+}
+
+#threejs-container {
+    background-color: #555;
+    border-color: #666;
+}
+
+footer {
+    background-color: #222;
+}

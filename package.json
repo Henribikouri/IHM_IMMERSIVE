@@ -1,0 +1,22 @@
+{
+  "name": "ihm_immersif",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "parcel index.html",
+    "build": "parcel build index.html"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "parcel": "^2.13.2",
+    "three": "^0.171.0"
+  },
+  "targets": {
+    "default": {
+      "includeNodeModules": ["three"]
+    }
+  }
+}

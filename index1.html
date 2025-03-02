@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulation Médicale Immersive</title>
+    <link rel="stylesheet" href="style.css"> <link rel="stylesheet" href="theme-clair.css" id="theme-style"> </head>
+<body>
+
+    <header>
+        <nav class="navbar">
+            <div class="navbar-brand" style="color: rgb(8, 122, 84);">Immersive<span style="color: rgb(90, 90, 168);">App</span></div> <ul class="navbar-menu">
+                <li class="nav-item"><a href="index.html" class="nav-link active">Accueil</a></li>
+                <li class="nav-item has-submenu">
+                    <a href="#" class="nav-link">Simulation</a>
+                    <ul class="submenu" id="simulation-submenu">
+                        <li><a href="#" id="symptom-selection-link">Sélection des Symptômes</a></li>
+                        </ul>
+                </li>
+                <li class="nav-item"><a href="#" class="nav-link">Contact</a></li>
+                <li class="nav-item has-submenu">
+                    <i class="fas fa-palette"></i>
+                    <a href="" class="nav-link" id="theme-link"><img src="images.png" alt=""></a>
+                    <ul class="submenu" id="theme-submenu" style="display: none;">
+                        <li><a href="#" id="theme-clair-link">ON</a></li>
+                        <li><a href="#" id="theme-sombre-link">OFF</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item"><a href="#" class="nav-link">À Propos</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main id="main-content">
+        <div id="simulation-panel" style="display: none;"> <h2>Sélection des Symptômes</h2>
+            <select id="symptom-selector">
+                <option value="">Sélectionner un symptôme</option>
+                <option value="mal_tete">Mal des yeux </option>
+                <option value="douleur_bras">Mal aux bras</option>
+                <option value="fievre">Fièvre</option>
+                <option value="se_lever">Se Mettre Debout</option>
+        
+                <option value="vertige">Vertige</option>  </select>
+                
+                </select>
+            <button id="apply-symptom">Appliquer le symptôme</button>
+            <button id="stop-symptoms" style="display: none;">Arrêter les Symptômes</button> </div>
+
+        <div id="threejs-container">
+            <div id="chat-container">
+                <div id="chat-icon">
+                    <img src="chat-icon.jpg" alt="Icône de Chat">  </div>
+                <div id="chat-window" style="display: none;">
+                    <div id="chat-header">
+                        <span id="chat-title">Chat Médical</span>
+                        <button id="chat-close-button">X</button>
+                    </div>
+                    <div id="chat-body">
+                        <div class="message message-received">
+                            <p>Bienvenue ! Je suis le Dr. Henri. Comment puis-je vous aider aujourd'hui ?</p>
+                        </div>
+                        </div>
+                    <div id="chat-footer">
+                        <input type="text" id="message-input" placeholder="Écrivez votre message...">
+                        <button id="send-button">Envoyer</button>
+                    </div>
+                </div>
+            </div>
+            </div>
+
+        </main>
+
+    <footer>
+        <p>&copy; 2025 Notre Application IHM immersive | M1-GI | Polytechnique . Tous droits réservés.</p>
+    </footer>
+
+    <script src="./src/index.js" type="module"></script> <script src="ui.js" type="module"></script>   </body>
+</html>
