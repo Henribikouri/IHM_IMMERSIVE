@@ -100,7 +100,7 @@ Ce projet est sous licence MIT - Voir le fichier [LICENSE](LICENSE) pour plus d'
 
 ## 📞 Contact
 📧 Email : [henribikouri@gmail.com](henribikouri@gmail.com)  
-🌍 Site Web : [www.ihm-immersive.com](#)
+🌍 Site Web : [----](#)
 
 ---
 
